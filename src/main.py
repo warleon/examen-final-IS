@@ -20,7 +20,7 @@ def set_message():
 		if topic not in messages:
 			messages[topic]=[]
 
-		messages[topic].append(message)
+		messages[topic].append({"message":message,"topic":topic})
 		return jsonify({"status":"ok"})
 	except:
 		return jsonify({"status":"fail"})
