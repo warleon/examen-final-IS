@@ -1,4 +1,5 @@
 import unittest
 
 class TestMain(unittest.TestCase):
-	pass
+	def test_main(self):
+		pass
