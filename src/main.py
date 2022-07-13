@@ -14,13 +14,16 @@ def getMessage(topic):
 
 @app.route("/message", methods=["POST"])
 def setMessage():
-	topic = request.json['topic']
-	message = request.json['message']
-	if not topic in messages:
-		messages[topic]=[]
+	try:
+		topic = request.json['topic']
+		message = request.json['message']
+		if not topic in messages:
+			messages[topic]=[]
 
-	messages[topic].append(message)
-	return jsonify({"status":"ok"})
+		messages[topic].append(message)
+		return jsonify({"status":"ok"})
+	except:
+		return jsonify({"status":"fail"})
 
 if __name__ == '__main__':
     app.run(debug=True)
