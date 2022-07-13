@@ -1,3 +1,4 @@
 # EJERCICIO - DISENIO-IS
  
-probando
+![gets](result_jmeter_get.JPG)
+![posts](result_jmeter_post.JPG)
