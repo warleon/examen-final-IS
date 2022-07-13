@@ -6,18 +6,18 @@ messages={}
 
 
 @app.route("/message/<topic>", methods=["GET"])
-def getMessage(topic):
+def get_message(topic):
 	if topic in messages:
 		return jsonify(messages[topic])
 	else:
 		return jsonify([])
 
 @app.route("/message", methods=["POST"])
-def setMessage():
+def set_message():
 	try:
 		topic = request.json['topic']
 		message = request.json['message']
-		if not topic in messages:
+		if topic not in messages:
 			messages[topic]=[]
 
 		messages[topic].append(message)
